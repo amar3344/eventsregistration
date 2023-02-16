@@ -15,12 +15,12 @@
 
 .events-container {
   display: flex;
-  width: 80%;
+  width: 70%;
 }
 
 .event-lists-container {
   background-color: #64748b;
-  width: 500px;
+  width: calc(100% - 40%);
   padding: 20px 20px 40px 20px;
   margin: 0px;
 }
@@ -40,8 +40,7 @@
 }
 
 .registration-container {
-  min-width: calc(80% - 500px);
+  width: calc(100% - 60%);
   background-color: #fff;
   padding: 10px;
-  max-width: 100%;
 }

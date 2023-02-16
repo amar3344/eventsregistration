@@ -55,12 +55,16 @@ const eventsList = [
 ]
 
 const Events = () => {
-  const [list, setEventList] = useState(eventsList)
+  const [initialText, setText] = useState()
+  const [isRunning, setRunning] = useState(false)
 
-  const getStatus = id => {
-    const statusList = list.filter(item => item.id === id)
+  const eventDetails = id => {
+    const registrationDetails = eventsList.filter(item => item.id === id)
+    const details = registrationDetails[0]
+    const resultText = details.registrationStatus
 
-    setEventList(statusList)
+    setRunning(true)
+    setText(resultText)
   }
   return (
     <div className="react-app">
@@ -68,19 +72,20 @@ const Events = () => {
         <div className="event-lists-container">
           <h2>Events</h2>
           <ul>
-            {list.map(item => (
+            {eventsList.map(item => (
               <EventItem
                 key={item.id}
                 details={item}
-                getRegistrationStatus={getStatus}
+                getEventDetails={eventDetails}
               />
             ))}
           </ul>
         </div>
         <div className="registration-container">
-          {eventsList.map(item => (
-            <ActiveEventRegistration key={item.id} details={item} />
-          ))}
+          <ActiveEventRegistration
+            gettingText={initialText}
+            running={isRunning}
+          />
         </div>
       </div>
     </div>
