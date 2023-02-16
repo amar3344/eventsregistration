@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+
+.react-app {
+  width: 100vw;
+  min-height: 100vh;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.events-container {
+  display: flex;
+  width: 80%;
+}
+
+.event-lists-container {
+  background-color: #64748b;
+  width: 500px;
+  padding: 20px 20px 40px 20px;
+  margin: 0px;
+}
+
+.event-lists-container ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+.event-lists-container h2 {
+  color: #fff;
+  font-weight: 500;
+}
+
+.registration-container {
+  min-width: calc(80% - 500px);
+  background-color: #fff;
+  padding: 10px;
+  max-width: 100%;
+}
